@@ -1,0 +1,146 @@
+/* Global settings */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: center; /* Centers the entire navbar content */
+  align-items: center;
+  background-color:#b3f6ffa1;
+  padding: 10px 20px;
+  transition: background-color 0.5s ease;
+}
+
+/* Brand container (logo + text) */
+.brand {
+  display: flex; 
+  height: 30px;
+  align-items: center;
+  margin-right: auto; /* Aligns brand to the left */
+}
+
+.navbar-logo {
+  height: 35px; /* Adjust the size as needed */
+  margin-right: 10px; /* Space between the logo and text */
+}
+
+.brand-text {
+  color: rgb(0, 0, 0);
+  font-size: 20px; /* Increase the font size for emphasis */
+  font-weight: bold; /* Makes the text bold */
+  letter-spacing: 1.2px; /* Adds a bit of letter spacing for a cleaner look */
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style-type: none;
+  padding: 0;
+  margin-right: 460px;
+  display: flex;
+  justify-content: center; /* Center the nav links horizontally */
+  align-items: center;     /* Vertically center the items */
+}
+
+
+.nav-links li {
+  margin: 0 10px;          /* Add space between the links */
+  position: relative;
+}
+
+.nav-links a {
+  display: block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Hover and active states */
+.nav-links a:hover,
+.nav-links .active-link,
+.nav-links a:active {
+  color: #000000;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #f46a07;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links .active-link::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #444;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}

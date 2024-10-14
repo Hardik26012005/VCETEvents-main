@@ -1,0 +1,191 @@
+/* Event container styling */
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align cards from the left */
+  gap: 20px;
+  padding: 40px;
+  background-image: linear-gradient(45deg,#d6de6038, #f8f8f8ba); /* Subtle background gradient */
+
+}
+
+/* Event card styling */
+.event-card {
+  background-color:#b3f6ffa1;
+  border-radius: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 calc(25% - 20px); /* 4 cards per row */
+  max-width: 350px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.event-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* Event image styling */
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid #ddd;
+  transition: transform 0.3s ease; /* Image hover effect */
+}
+
+.event-card:hover .event-image {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Event details styling */
+.event-details {
+  padding: 20px;
+  background-color: #b3f6ffa1;
+}
+
+.event-details h3 {
+  font-size: 1.6rem;
+  color: #333;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Text shadow for better readability */
+  margin-bottom: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.event-details p {
+  font-size: 1rem;
+  color: #666;
+  margin: 10px 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Event button styling */
+.event-button {
+  padding: 12px 24px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  outline: none;
+}
+
+.event-button:hover {
+  background-color: #ff4500;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Add shadow on button hover */
+}
+
+/* No events message styling */
+.no-events {
+  font-size: 1.6rem;
+  color: #999;
+  text-align: center;
+  padding: 50px 0;
+  font-weight: 300;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-close-button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.modal-close-button:hover {
+  background-color: #ff4500;
+}
+
+.register-button {
+  background-color: #32CD32;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.register-button:hover {
+  background-color: #228B22;
+}
+
+/* Popup Animation */
+.modal-card {
+  animation: popUp 0.5s ease-in-out forwards;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .event-card {
+    flex: 1 1 calc(33.33% - 20px); /* 3 cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .event-card {
+    flex: 1 1 calc(50% - 20px); /* 2 cards per row on tablets */
+  }
+
+  .modal-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 576px) {
+  .event-card {
+    flex: 1 1 100%; /* 1 card per row on small screens */
+  }
+}
